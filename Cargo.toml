@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "pymwemu",
+    "libmwemu",
+    "mwemu"
+]
+
+[profile.release]
+debug = 0
+strip = true
+opt-level = 3
+panic = 'unwind'
+
+[profile.dev]
+debug = "full"
+opt-level = 0
+panic = 'unwind'
+
+[profile.dev-debug]
+inherits = 'dev'
+opt-level = 0
+panic = 'unwind'
+
+[profile.profiler]
+inherits  = 'dev'
+debug = 2
+opt-level = 2
+panic = 'unwind'
